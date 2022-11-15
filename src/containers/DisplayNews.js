@@ -4,11 +4,14 @@ import DisplayNewsinGrid from "../components/DisplayNewsinGrid";
 
 function DisplayNews(props) {
   const newsData = useSelector((state) => state);
-  if (newsData.loading && newsData[props.newsType].length === 0) {
-    <div>
-      <br />
-      <Spinner></Spinner>
-    </div>;
+  if (newsData.loading) {
+    return (
+      <div>
+        <br />
+        <Spinner animation="grow"></Spinner>
+        <h3>Loading News...</h3>
+      </div>
+    );
   }
   return (
     <DisplayNewsinGrid

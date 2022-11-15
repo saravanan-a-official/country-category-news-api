@@ -16,11 +16,8 @@ function App() {
           <DisplayNewsByCategoryCountry />
         </Tab>
         <Tab eventKey="breaking" title="Breaking News">
-          <DisplayBreakingHeadlines></DisplayBreakingHeadlines>
+          <DisplayBreakingHeadlines />
         </Tab>
-        {/* <Tab eventKey="contact" title="Contact" disabled>
-          <h1>simple News</h1>
-        </Tab> */}
       </Tabs>
     </div>
   );

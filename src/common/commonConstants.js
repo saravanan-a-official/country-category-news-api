@@ -7,5 +7,7 @@ export const GET_BREAKING_NEWS_OK = "GET_BREAKING_NEWS_OK";
 export const INITIAL_STATE = {
   breakingNews: [],
   categoryNews: [],
-  loading: true,
+  loading: false,
 };
+export const COUNTRY_CODE_DEFAULT = "in";
+export const CATEGORY_CODE_DEFAULT = "business";
