@@ -1,21 +1,13 @@
-import { Carousel, Spinner } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 
 function DisplayNewsinGrid(props) {
-  console.log("props", props);
-  if (props.newsData.action !== undefined) {
-    if (props.newsData.action.payload === undefined)
-      return (
-        <div>
-          <br />
-          <Spinner></Spinner>
-        </div>
-      );
-    const newsData = props.newsData.action?.payload;
-    console.log("props.newsData", props.newsData);
-    return newsData?.length > 0 ? (
+  const newsType = props.newsType;
+  if (props.newsData[newsType] !== undefined) {
+    const newsData = props.newsData[newsType];
+    return newsData.length > 0 ? (
       <Carousel>{formCarouselItems(newsData)}</Carousel>
     ) : (
-      <h1>{/* News Not available */}</h1>
+      <h1> {/* News Not available */}</h1>
     );
   }
 

@@ -4,3 +4,7 @@ import * as CommonConstants from "../../common/commonConstants";
 export function getNewsForCountryAndCategory() {
   return { type: CommonConstants.LOAD_HEADLINES_DETAILS };
 }
+
+export function getBreakingNews() {
+  return { type: CommonConstants.LOAD_BREAKING_NEWS };
+}

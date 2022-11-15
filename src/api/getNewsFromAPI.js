@@ -23,6 +23,15 @@ export async function getHeadlines(
       apiKey: CommonConstants.API_KEY,
     },
   });
-  console.log("axiosNewsResponse", axiosNewsResponse);
+  return axiosNewsResponse.data.articles;
+}
+
+export async function getBreakingNews() {
+  const axiosNewsResponse = await axios.get("/everything", {
+    params: {
+      q: "breaking",
+      apiKey: CommonConstants.API_KEY,
+    },
+  });
   return axiosNewsResponse.data.articles;
 }
