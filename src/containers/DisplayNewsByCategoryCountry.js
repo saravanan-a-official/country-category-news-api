@@ -85,6 +85,8 @@ function DisplayNewsByCategoryCountry() {
       <button onClick={() => dispatch(getNewsForCountryAndCategory())}>
         Get News
       </button>
+      <br />
+      <br />
       <DisplayNews newsType="categoryNews" />
     </div>
   );
