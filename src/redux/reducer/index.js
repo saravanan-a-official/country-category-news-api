@@ -17,6 +17,10 @@ const reducer = (
       return { ...state, loading: true };
     case CommonConstants.GET_BREAKING_NEWS_OK:
       return { ...state, breakingNews: action.payload, loading: false };
+    case CommonConstants.LOAD_NEWS_SEARCH:
+      return { ...state, loading: true };
+    case CommonConstants.GET_NEWS_SEARCH_OK:
+      return { ...state, searchNews: action.payload, loading: false };
     default:
       return state;
   }

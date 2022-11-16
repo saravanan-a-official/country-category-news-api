@@ -8,3 +8,7 @@ export function getNewsForCountryAndCategory() {
 export function getBreakingNews() {
   return { type: CommonConstants.LOAD_BREAKING_NEWS };
 }
+
+export function getNewsBySeachText(searchText) {
+  return { type: CommonConstants.LOAD_NEWS_SEARCH, payload: searchText };
+}

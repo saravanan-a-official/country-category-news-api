@@ -2,6 +2,7 @@ import { Tabs, Tab } from "react-bootstrap";
 import "../styles/App.css";
 import DisplayNewsByCategoryCountry from "./DisplayNewsByCategoryCountry";
 import DisplayBreakingHeadlines from "./DisplayBreakingHeadlines";
+import DisplayNewsBySearchText from "./DisplayNewsBySearhText";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         </Tab>
         <Tab eventKey="breaking" title="Breaking News">
           <DisplayBreakingHeadlines />
+        </Tab>
+        <Tab eventKey="search" title="SearchNews">
+          <DisplayNewsBySearchText />
         </Tab>
       </Tabs>
     </div>

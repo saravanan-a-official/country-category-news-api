@@ -6,6 +6,7 @@ function* getNewsDataWatcher() {
   yield all([
     takeLatest(CommonConstants.LOAD_HEADLINES_DETAILS, pushHeadlinesToStore),
     takeLatest(CommonConstants.LOAD_BREAKING_NEWS, pushBreakingNewsToStore),
+    takeLatest(CommonConstants.LOAD_NEWS_SEARCH, pushSearchNewsToStore),
   ]);
 }
 
@@ -18,9 +19,17 @@ function* pushHeadlinesToStore(action) {
 }
 
 function* pushBreakingNewsToStore(action) {
-  const breakingNews = yield call(api.getBreakingNews, "");
+  const breakingNews = yield call(api.getBreakingNews);
   yield put({
     type: CommonConstants.GET_BREAKING_NEWS_OK,
+    payload: breakingNews,
+  });
+}
+
+function* pushSearchNewsToStore(action) {
+  const breakingNews = yield call(api.getBreakingNews, action.payload);
+  yield put({
+    type: CommonConstants.GET_NEWS_SEARCH_OK,
     payload: breakingNews,
   });
 }

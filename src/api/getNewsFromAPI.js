@@ -26,10 +26,10 @@ export async function getHeadlines(
   return axiosNewsResponse.data.articles;
 }
 
-export async function getBreakingNews() {
+export async function getBreakingNews(searchText = "breaking") {
   const axiosNewsResponse = await axios.get("/everything", {
     params: {
-      q: "breaking",
+      q: searchText,
       apiKey: CommonConstants.API_KEY,
     },
   });

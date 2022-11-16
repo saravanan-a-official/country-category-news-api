@@ -5,7 +5,7 @@ function DisplayNewsinGrid(props) {
   if (props.newsData[newsType] !== undefined) {
     const newsData = props.newsData[newsType];
     return newsData.length > 0 ? (
-      <Carousel>{formCarouselItems(newsData)}</Carousel>
+      <Carousel pause="hover">{formCarouselItems(newsData)}</Carousel>
     ) : (
       <h1> {/* News Not available */}</h1>
     );
@@ -18,11 +18,13 @@ function formCarouselItems(newsData) {
   carouselItems = newsData.map((data, idx) => {
     if (data.urlToImage !== null) {
       return (
-        <Carousel.Item>
+        <Carousel.Item id={idx}>
           <img
             className="d-block w-100"
             src={data.urlToImage}
             alt={data.title}
+            height="530px"
+            width="940px"
           />
           <Carousel.Caption>
             <h3>
