@@ -5,7 +5,9 @@ function DisplayNewsinGrid(props) {
   if (props.newsData[newsType] !== undefined) {
     const newsData = props.newsData[newsType];
     return newsData.length > 0 ? (
-      <Carousel pause="hover">{formCarouselItems(newsData)}</Carousel>
+      <Carousel pause="hover" indicators={false}>
+        {formCarouselItems(newsData)}
+      </Carousel>
     ) : (
       <h1> {/* News Not available */}</h1>
     );
